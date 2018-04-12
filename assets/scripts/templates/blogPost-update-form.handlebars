@@ -2,9 +2,21 @@
   <form id="update-blogPost" class="border">
     <fieldset>
       <form id="update-blogPost" class="border">
-        <input type="text" name="blogPost[title]" placeholder="title" value="{{blogPost.title}}"required>
+        <input type="text" name="blogPost[title]" placeholder="blog title" value="{{blogPost.title}}"required>
         <input name="blogPost[id]" type="hidden" value="{{blogPost.id}}">
         <textarea class="form-control" id="update-blogPost-body" name="blogPost[body]" placeholder="Body" rows="3" required>{{blogPost.body}}</textarea>
+
+        <form id="multipart-form-data" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <!-- <legend>enctype="multipart/form-data"</legend> -->
+          <label>
+            Image
+            <input type="file" name="image[file]">
+          </label>
+            <input type="submit" name="submit" value="Upload">
+          </fieldset>
+        </form>
+
         <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#update-blogPost-modal">Submit</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </form>

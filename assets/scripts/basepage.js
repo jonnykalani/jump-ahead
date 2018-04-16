@@ -12,19 +12,25 @@ const imageApi = require('./images/api.js')
 const imageUi = require('./images/ui.js')
 let webpage
 
+const viewImageInfo = function (data) {
+  console.log('viewImageInFo is running')
+  const orgInfoData = orgInfoTemplate({ users: data })
+  $('#content').html(orgInfoData)
+  store.viewed_user.organization = data.user.organization
+  return data
+}
+
 const viewOrgInfo = function (data) {
+  console.log('viewOrgInfo is running')
+  // viewImageInfo(data)
   const orgInfoData = orgInfoTemplate({ users: data })
   $('#content').html(orgInfoData)
   store.viewed_user.organization = data.user.organization
   $('.showblogbutton').on('click', () => onShowBlogPosts(data))
-  return data
-}
-
-const viewImageInfo = function (data) {
-  const orgInfoData = orgInfoTemplate({ users: data })
-  $('#content').html(orgInfoData)
-  store.viewed_user.organization = data.user.organization
-  $('.showimagebutton').on('click', () => onUploadImages(data))
+  $('.showimagebutton').on('click', () => {
+    console.log('showImageButton was clicked')
+    onUploadImages(data)
+  })
   return data
 }
 
@@ -63,6 +69,7 @@ const showWebpageByLink = function (event) {
 
 const goBackToMain = function () {
   userApi.getUser(store.viewed_user.user_id)
+    .then(viewImageInfo)
     .then(viewOrgInfo)
     .then(response => {
       return response
@@ -75,6 +82,7 @@ const goBackToMain = function () {
 }
 
 const onShowBlogPosts = function (data) {
+  console.log('onShowBlogPosts is running')
   blogApi.getOwnedBlogposts(data.user.id)
     // .then((response) => console.log('response is', response))
     .then(blogUi.showBlogPosts)

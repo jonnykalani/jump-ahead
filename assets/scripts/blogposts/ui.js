@@ -85,6 +85,7 @@ const blogPostDeleteFailure = function (error) {
 }
 
 const showBlogPosts = function (data) {
+  console.log('data in showBlogPosts is ', data)
   data.blogPosts.sort(compare)
   if (store.user) {
     if (store.user.id === store.viewed_user.user_id) {

@@ -45,9 +45,11 @@ const onSignOut = function (event) {
 
 const onViewOrgInfo = function (event) {
   event.preventDefault()
+  console.log('onViewOrgInfo is running')
   const data = getFormFields(event.target)
   store.viewed_user = data.users
   api.getUser(data.users.user_id)
+    // .then(viewMain.viewImageInfo)
     .then(viewMain.viewOrgInfo)
     .then(() => {
       return wpApi.getOwnedWebpages(data.users.user_id)

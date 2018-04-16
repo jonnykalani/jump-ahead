@@ -22,6 +22,7 @@ const imageIndex = function () {
 }
 
 const uploadImage = function (data) {
+  console.log('api uploadImage is running')
   return $.ajax({
     url: config.apiUrl + '/images',
     method: 'POST',

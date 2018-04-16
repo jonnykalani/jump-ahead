@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>JUMP AHEAD</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPkAAABHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC7AAAAuQAAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaQAAAP8AAADuAAAA0wAAAGIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABMAAADYAAAA/wAAAP8AAAD+AAAAsAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA7AAAAFwAAAAAAAACSAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD+AAAA1gAAAJ0AAAB1AAAAfQAAAKMAAADXAAAA+QAAAIAAAAB/AAAAEQAAADwAAADuAAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANQAAAByAAAAMQAAAAAAAAAAAAAAOwAAAOsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAADdAAAAawAAAAAAAAAAAAAAAAAAAAAAAAAqAAAA1AAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAALwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAABIAAAAiwAAAKEAAACtAAAAmwAAAMkAAAD/AAAA/wAAAPMAAAA3AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAADMAAAA/wAAAKYAAAAhAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAC2AAAA/wAAAPEAAAASAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAqAAAA/wAAAPwAAABoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAAFEAAAAVAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAD//AAA//wAAH/8AAAP/AAAA8QAAAAAAAAAAAADAAQAA4AEAAPABAAD/gwAA/wcAAP8PAAD/HwAA//8AAA==" rel="icon" type="image/x-icon">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+    <body class="container-fluid">
+      <div class="pageContent">
+        <header class="jump-ahead-slogan">
+          <h1 id="header-h1">JUMP AHEAD</h1>
+          <section class="lede">Get a jump start on your company's website with Jump Ahead!</section>
+        </header>
+
+        <p id="message" class="alert" role="alert"></p>
+
+        <div class='signed-out-buttons'>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-up-modal">
+            Register New Organization
+          </button>
+          <br />
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#sign-in-modal">
+            Sign In
+          </button>
+        </div>
+
+        <div class='signed-in-buttons'>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#create-blogPost-modal">
+            Create BlogPost
+          </button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#create-webpage-modal">
+            Create Webpage
+          </button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#create-image-modal">
+            Upload Image
+          </button>
+
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#change-password-modal">
+            Change Password
+          </button>
+          <form id="sign-out">
+            <input type="submit" class="btn btn-danger" value="Sign out!">
+          </form>
+        </div>
+        <h3 class="drop-down-title"> View content from other organizations</h3>
+        <div class="dropdown">
+          <form id='organizations-to-view'>
+            <span class='user-dropdown'></span>
+            <input type="submit" class="btn btn-info" value="See their page!">
+          </form>
+        </div>
+        <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content signupcontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Sign-up!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-up" class="border">
+                  <fieldset>
+                    <input type="text" name="credentials[organization]" placeholder="Organization Name" required>
+                    <input type="text" name="credentials[address]" placeholder="Address" required>
+                    <input minlength="9" type="tel" name="credentials[phone_number]" placeholder="Phone Number" required>
+                    <input type="text" name="credentials[company_description]" placeholder="Company Description" required>
+                    <input type="text" name="credentials[email]" id="username-id-create" placeholder="Email" required>
+                    <input type="password" name="credentials[password]" id="password-id-create" placeholder="Password" required>
+                    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" required><br>
+                    <button type="submit" class="btn btn-info">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="sign-in-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content signincontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Sign-in!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="sign-in" class="border">
+                  <fieldset>
+                    <input type="text" name="credentials[email]" placeholder="Email" required>
+                    <input type="password" name="credentials[password]" placeholder="Password" required><br>
+                    <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#sign-in-modal">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="change-password-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content changepasswordcontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Change Password!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="change-password" class="border">
+                  <fieldset>
+                    <input type="password" name="passwords[old]" placeholder="Old Password" required>
+                    <input type="password" name="passwords[new]" placeholder="New Password" required><br>
+                    <button type="submit" class="btn btn-info" data-toggle="modal" data-target="#change-password-modal">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <div class="modal fade" id="create-webpage-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content createwebpagecontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create Webpage!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="create-webpage" class="border">
+                  <fieldset>
+                    <form id="create-webpage" class="border">
+                      <input type="text" name="webpage[title]" placeholder="title" required>
+                      <textarea class="form-control" id="create-webpage-body" name="webpage[body]" placeholder="Body" rows="3" required></textarea>
+                      <button type="submit" class="btn btn-info">Submit</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                  </fieldset>
+                </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="update-webpage-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content updatewebpagecontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Update Webpage!</h4>
+              </div>
+              <div class="modal-body">
+                <span id='update-webpage-span'></span>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="create-blogPost-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content createblogPostcontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Create BlogPost!</h4>
+              </div>
+              <div class="modal-body">
+                <form id="create-blogPost" class="border">
+                  <fieldset>
+                    <form id="create-blogPost" class="border">
+                      <input type="text" name="blogPost[title]" placeholder="title" required>
+                      <textarea class="form-control" id="create-blogPost-body" name="blogPost[body]" placeholder="Body" rows="3" required></textarea>
+
+                      <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#create-blogPost-modal">Submit</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </form>
+                  </fieldset>
+                </form>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="update-blogPost-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content createblogPostcontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Update BlogPost!</h4>
+              </div>
+              <div class="modal-body">
+                <span id='update-blogpost-span'></span>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+        <div class="modal fade" id="create-image-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content createblogPostcontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload Image!</h4>
+              </div>
+              <div class="modal-body">
+                  <fieldset>
+
+                      <form id="create-image" method="post" enctype="multipart/form-data">
+                        <!-- action="http://httpbin.org/post"  -->
+                        <!-- <legend>enctype="multipart/form-data"</legend> -->
+                        <label>
+                          Image
+                          <input type="file" name="image[file]">
+                          <!-- <input type="submit" val="Upload"> -->
+                        </label>
+                      <button val="Upload" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#create-image-modal">Submit</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </form>
+                  </fieldset>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+<div class='otherforms'>
+      <form id="get-webpages" class="border">
+        <legend>get-webpages</legend>
+        <input type="submit" value="Get all webpages!">
+      </form>
+      <form id="get-webpage" class="border">
+        <legend>get-webpage</legend>
+        <input type="text" name="webpage[id]" placeholder="id number">
+        <input type="submit" value="Find a webpage">
+      </form>
+      <form id="update-webpage" class="border">
+        <legend>update-webpage</legend>
+        <input type="text" name="webpage[id]" placeholder="id number">
+        <input type="text" name="webpage[title]" placeholder="title">
+        <input type="text" name="webpage[body]" placeholder="body">
+        <input type="submit" value="Update a webpage">
+      </form>
+      <form id="delete-webpage" class="border">
+        <legend>delete-webpage</legend>
+        <input type="text" name="webpage[id]" placeholder="id number">
+        <input type="submit" value="Delete webpage">
+      </form>
+      <form id="index-blogPost">
+        <legend>Get all blog posts</legend>
+        <input type="submit" value="Get BlogPosts">
+      </form>
+      <form id="show-blogPost">
+        <legend>Get one blog posts</legend>
+        <input type="text" name="blogPost[id]" placeholder="Blog Post ID">
+        <input type="submit" value="Get one BlogPost">
+      </form>
+      <form id="update-blogPost">
+        <legend>Get one blog posts</legend>
+        <input type="text" name="blogPost[id]" placeholder="Blog Post ID">
+        <input type="text" name="blogPost[title]" placeholder="Blog Post title">
+        <input type="text" name="blogPost[body]" placeholder="Blog Post body">
+        <input type="submit" value="Update one BlogPost">
+      </form>
+      <form id="delete-blogPost">
+        <legend>Delete one blog posts</legend>
+        <input type="text" name="blogPost[id]" placeholder="Blog Post ID">
+        <input type="submit" value="Delete one BlogPost">
+      </form>
+    </div>
+  </div>
+  <div class="modal fade" id="confirmDeleteWebpageModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteWebpageModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="confirmDeleteWebpageModalLabel">Confirm Deletion</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this webpage?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-info webpageDeleteConfirmButton" data-dismiss='modal'>Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="confirmDeleteBlogPostModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteBlogPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="confirmDeleteBlogPostModalLabel">Confirm Deletion</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this blog post?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-info blogPostDeleteConfirmButton" data-dismiss='modal'>Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="confirmDeleteImageModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteImageModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="confirmDeleteImageModalLabel">Confirm Deletion</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete this image?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn btn-info imageDeleteConfirmButton" data-dismiss='modal'>Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="content"></div>
+  <div class="bottom-clear"></div>
+  <footer class="footer">
+  <p class="footer-message">Powered by JUMPAHEAD</p>
+  </footer>
+  <!-- <div id="content" -->
+    </body>
+</html>

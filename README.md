@@ -1,6 +1,6 @@
 JUMP AHEAD\
 \
-JUMP AHEAD is a web application that allows users to create websites and blogposts for their company, and view websites and blogs from other companies.  A user can sign in by entering fields like 'Organization name', 'Address', 'Email', etc, and only users associated with that company can edit that company's blogposts and webpages. Any other visitors to the site are still able to view blogposts and webpages by any company by selecting from a drop down menu.\
+JUMP AHEAD is a web application that allows users to create websites and blogposts for their company, and view websites and blogs from other companies.  A user can sign in by entering fields like 'Organization name', 'Address', 'Email', etc, and only users associated with that company can edit that company's blogposts, images, and webpages. Any other visitors to the site are still able to view blogposts and webpages by any company by selecting from a drop down menu.\
 \
 Wireframes: https://i.imgur.com/kwfQEaa.jpg \
 Deployed Website: https://jump-ahead-jmen.github.io/jump-ahead/ \
@@ -15,9 +15,10 @@ As a user, I want to be able to post webpages that others can view.\
 As a user, I want to be able to view other companys' blogs and webpages.\
 As a user, I want to be able to chage my password.\
 As a user, I want others to be able to see what organization I'm associated with.\
+As a user, I want to be able to upload photos to my website.
 \
 Technologies used:\
-HTML, CSS, SASS, JavaScript, AJAX, Bootstrap, Handlebars\
+HTML, CSS, SASS, JavaScript, AJAX, Bootstrap, Handlebars, AWS/SDK S3\
 \
 Unsolved Problems:\
 There are several improvements yet to be made to this application in future iterations:\

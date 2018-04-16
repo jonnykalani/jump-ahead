@@ -38,6 +38,9 @@
           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#create-webpage-modal">
             Create Webpage
           </button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#create-image-modal">
+            Upload Image
+          </button>
 
           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#change-password-modal">
             Change Password
@@ -173,17 +176,6 @@
                       <input type="text" name="blogPost[title]" placeholder="title" required>
                       <textarea class="form-control" id="create-blogPost-body" name="blogPost[body]" placeholder="Body" rows="3" required></textarea>
 
-                      <form id="multipart-form-data" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
-                      <fieldset>
-                        <!-- <legend>enctype="multipart/form-data"</legend> -->
-                        <label>
-                          Image
-                          <input type="file" name="image[file]">
-                        </label>
-                          <input type="submit" name="submit" value="Upload">
-                        </fieldset>
-                      </form>
-
                       <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#create-blogPost-modal">Submit</button>
                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </form>
@@ -207,6 +199,34 @@
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+
+        <div class="modal fade" id="create-image-modal" tabindex="-1" role="dialog">
+          <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content createblogPostcontent">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Upload Image!</h4>
+              </div>
+              <div class="modal-body">
+                  <fieldset>
+
+                      <form id="create-image" method="post" enctype="multipart/form-data">
+                        <!-- action="http://httpbin.org/post"  -->
+                        <!-- <legend>enctype="multipart/form-data"</legend> -->
+                        <label>
+                          Image
+                          <input type="file" name="image[file]">
+                          <!-- <input type="submit" val="Upload"> -->
+                        </label>
+                      <button val="Upload" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#create-image-modal">Submit</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </form>
+                  </fieldset>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
 <div class='otherforms'>
       <form id="get-webpages" class="border">
         <legend>get-webpages</legend>

@@ -1,0 +1,16 @@
+{{#each images as |image|}}
+  <div data-id="{{image.id}}">
+    <div class="blogborder">
+    <h2 class="resource-header">{{image._owner.organization}}</h2>
+    <h2 class="resource-header">{{image.title}}</h2>
+      <br />
+      <p class="resource-body">{{image.body}}</p>
+      <p class="resource-body">{{image.createdAt}}</p>
+    </div>
+  </div>
+  {{else}}
+
+  <h2 class="resource-body">{{organization}} has not posted any image entries yet</h2>
+{{/each}}
+
+<span class="page-links" id="back-link">Return to Main</span>

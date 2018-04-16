@@ -1,0 +1,21 @@
+{{#each images as |image|}}
+  <div data-id="{{image.id}}">
+    <div class="blogborder">
+      <ul>
+      <li class="resource-header">{{image._owner.organization}}</li>
+      <li class="resource-header">{{image.title}}</li>
+        <br />
+        <li class="resource-body">{{image.body}}</li>
+        <li class="resource-body">{{image.createdAt}}</li>
+        <button class="image-update blogpost-btn btn btn-sm btn-info" data-id={{image.id}}>Update</button>
+        <!-- <br /> -->
+        <button class="image-delete blogpost-btn btn btn-sm btn-danger" data-id={{image.id}}>Delete</button>
+      </ul>
+    </div>
+  </div>
+  {{else}}
+
+  <h2 class="resource-body">{{organization}} has not posted any image entries yet</h2>
+{{/each}}
+
+<span class="page-links" id="back-link">Return to Main</span>

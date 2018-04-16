@@ -8,6 +8,8 @@ const webpageLinksTemplate = require('./templates/page-links.handlebars')
 const compare = require('./customsorterforposts.js')
 const store = require('./store.js')
 const userApi = require('./users/api.js')
+const imageApi = require('./images/api.js')
+const imageUi = require('./images/ui.js')
 let webpage
 
 const viewOrgInfo = function (data) {
@@ -15,6 +17,14 @@ const viewOrgInfo = function (data) {
   $('#content').html(orgInfoData)
   store.viewed_user.organization = data.user.organization
   $('.showblogbutton').on('click', () => onShowBlogPosts(data))
+  return data
+}
+
+const viewImageInfo = function (data) {
+  const orgInfoData = orgInfoTemplate({ users: data })
+  $('#content').html(orgInfoData)
+  store.viewed_user.organization = data.user.organization
+  $('.showimagebutton').on('click', () => onUploadImages(data))
   return data
 }
 
@@ -72,9 +82,19 @@ const onShowBlogPosts = function (data) {
     .catch(console.error)
 }
 
+const onUploadImages = function (data) {
+  console.log('onUploadImages in UI is running')
+  imageApi.getOwnedImages(data.user.id)
+    .then(imageUi.showImages)
+    .then(() => $('#back-link').on('click', goBackToMain))
+    .catch(console.error)
+}
+
 module.exports = {
   viewOrgInfo,
   showWebpageLinks,
   showWebpageByLink,
-  goBackToMain
+  goBackToMain,
+  viewImageInfo,
+  onUploadImages
 }

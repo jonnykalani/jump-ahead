@@ -7,6 +7,7 @@ const blogPostEvents = require('./blogposts/events.js')
 const userDropdown = require('./users/user-dropdown.js')
 const deleteEvents = require('./delete-events.js')
 const updateEvents = require('./update-events.js')
+const imageEvents = require('./images/events.js')
 
 $(() => {
   userDropdown()
@@ -15,6 +16,7 @@ $(() => {
   blogPostEvents.addHandlers()
   deleteEvents.addHandlers()
   updateEvents.addHandlers()
+  imageEvents.addHandlers()
   $('.modal').on('hidden.bs.modal', () => $('form').find('input:not([type="submit"])').val(''))
   $('.modal').on('hidden.bs.modal', () => $('textarea').val(''))
 })

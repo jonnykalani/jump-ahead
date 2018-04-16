@@ -1,0 +1,21 @@
+{{#each images as |image|}}
+  <form id="update-image" class="border">
+    <fieldset>
+      <form id="update-image" class="border">
+
+        <form id="multipart-form-data" action="http://httpbin.org/post" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <!-- <legend>enctype="multipart/form-data"</legend> -->
+          <label>
+            Image
+            <input type="file" name="image[file]">
+          </label>
+          </fieldset>
+        </form>
+
+        <button val="Upload" type="submit" class="btn btn-primary" data-toggle="modal" data-target="#update-image-modal">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </form>
+    </fieldset>
+  </form>
+{{/each}}

@@ -63,7 +63,16 @@ const showImages = function (data) {
 //   return data
 // }
 
+const imageDeleteSuccess = function (data) {
+  $('#confirmDeleteImageModal').modal('hide')
+  $('#message').text('Deleted image successfully!')
+  $('#message').removeClass('alert-danger').addClass('alert-success').show()
+  $('form').find('input:not([type="submit"])').val('')
+  $('#message').delay(3000).slideToggle()
+}
+
 module.exports = {
   imageCreateSuccess,
+  imageDeleteSuccess,
   showImages
 }

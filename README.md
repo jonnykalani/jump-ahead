@@ -5,7 +5,7 @@ JUMP AHEAD is a web application that allows users to create websites and blogpos
 Wireframes: https://i.imgur.com/kwfQEaa.jpg \
 Deployed Website: https://jonnykalani.github.io/jump-ahead/ \
 Link to API repo: https://github.com/jonnykalani/jump-ahead-api \
-Link to deployed API: https://jump-ahead-api.herokuapp.com/ \
+Link to deployed API: https://cryptic-shelf-20832.herokuapp.com/ \
 \
 User Stories:\
 As a user, I want to be able to log in and out of my account and edit my own resources.\

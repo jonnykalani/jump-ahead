@@ -25,6 +25,8 @@ There are several improvements yet to be made to this application in future iter
 -Refactor code to reflect the organization that we established to separate concerns according to the resources they pertained to. For example, we still have some event handlers that crud on the 'webpage' resource, but are located in the file intended to handle 'users' events.\
 -Uploading of images is not yet supported by the application, but is a stretch goal we could achieve.\
 -There's always room for improvement in styling.\
+-the images uploads are really basic, as I was merely trying to meet requirements in time. Will make improvements after
+capstone is done.
 \
 Planning, process, and problem-solving strategies:\
 We typically began each 'chunk' of work time by having a stand-up meeting where we reviewed our progress thus far and identified short and long term goals for the future.  The biggest obstacle during this project was the proximity of the deadline for completion.  Because of this constraint, we came to a consensus that the vast majority of our time and energy should be focused on reaching an MVP, and that other concerns should be secondary to that.  Another challenge we faced was identifying the most efficient way to divide labor.  Our solution for this challenge was to begin each 'sprint' by working together on a single concern until it became clear how we could split up and simultaneously work on separate issues, which provided continuity.  

@@ -3,8 +3,8 @@ JUMP AHEAD\
 JUMP AHEAD is a web application that allows users to create websites and blogposts for their company, and view websites and blogs from other companies.  A user can sign in by entering fields like 'Organization name', 'Address', 'Email', etc, and only users associated with that company can edit that company's blogposts, images, and webpages. Any other visitors to the site are still able to view blogposts and webpages by any company by selecting from a drop down menu.\
 \
 Wireframes: https://i.imgur.com/kwfQEaa.jpg \
-Deployed Website: https://jump-ahead-jmen.github.io/jump-ahead/ \
-Link to API repo: https://github.com/jump-ahead-jmen/jump-ahead-api \
+Deployed Website: https://jonnykalani.github.io/jump-ahead/ \
+Link to API repo: https://github.com/jonnykalani/jump-ahead-api \
 Link to deployed API: https://jump-ahead-api.herokuapp.com/ \
 \
 User Stories:\
